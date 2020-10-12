@@ -1,0 +1,11 @@
+<%= form_with url: session_path, local: true do |f| %>
+  <p>
+    <label for='session_name'>User name</label>
+    <%= text_field_tag 'session[name]' %>
+  </p>
+  <p>
+    <label for="session_password">Password</label>
+    <%= password_field_tag 'session[password]' %>
+  </p>
+  <%= submit_tag 'Log in' %>
+<% end %>

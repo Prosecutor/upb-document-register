@@ -1,0 +1,7 @@
+<div>
+  <% if current_user %>
+    <div style="right: 0px">
+      <%= link_to "Log out", session_path, method: :delete %>
+    </div>
+  <% end  %>
+</div>

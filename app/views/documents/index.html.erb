@@ -1,0 +1,25 @@
+<h1>List of documents</h1>
+
+<% if @documents.empty? %>
+  There are no documents at the moment.
+  <%= link_to 'Create one?', new_document_path %>
+<% else %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= link_to document.title, document_path(document) %></td>
+        <td><%= truncate(document.description, length: 30) %></td>
+        <td>
+          <%= render 'actions', document: document %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Create new document', new_document_path %>
+<% end %>
